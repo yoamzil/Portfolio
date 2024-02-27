@@ -1,4 +1,9 @@
-h1
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* h1
 {
     font-size: 28px;
     text-transform: uppercase;
@@ -141,4 +146,4 @@ input[type='submit']
 .summary img:hover
 {
     transform: scale(1.3);
-}
+} */
