@@ -4,10 +4,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="resources/css/output.css">
 	<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body class="bg-slate-300">
-	<header class="fixed w-screen flex justify-evenly p-6 bg-gray-900 text-white font-bold">
+	<header class="flex justify-evenly p-6 bg-gray-900 text-white font-bold">
 		<!-- <h1 class="text-center">Amzil Youness</h1>
 		<p id="position">Software Engineer</p> -->
 		<a href="#"
@@ -18,20 +19,26 @@
 		<a href="#" class="transition-transform duration-500 ease-in-out hover:text-red-700 hover:scale-150">Contact
 			Me</a>
 	</header>
-	<section class="flex justify-evenly">
-		<div class="flex flex-col h-screen justify-center">
-			<h3 class="text-6xl font-bold">Hi</h3>
-			<h1 class="text-8xl font-bold pt-2">I'm <span class="text-red-700">Youness<br></span>a Frontend Developer
+	<section class="flex justify-evenly flex-col-reverse lg:flex-row items-center p-8 h-[80vh]">
+		<div class="flex flex-col  justify-center">
+			<h3 class="lg:text-6xl text-3xl font-bold">Hi</h3>
+			<h1 class="lg:text-8xl text-4xl font-bold pt-2">I'm <span class="text-red-700">Youness<br></span>a Frontend
+				Developer
 			</h1>
-			<p class="pt-9">A passionate learner and computer science student at UM6P - 1337 MED (42 Network) and
-				ALX.<br>I love
-				exploring
-				new technologies and using them to solve real-life problems.</p>
+			<p class="pt-9">
+			<div>A passionate learner and computer science student at UM6P - 1337 MED (42 Network) and ALX.</div>
+			<div>I love exploring new technologies and using them to solve real-life problems.</div>
+			</p>
 		</div>
-		<div class="w-96 flex items-center">
-			<img class="rounded-full" src="./icons/avatar.jpg" alt="">
+		<div class="border-2 border-red-700 flex items-center overflow-hidden rounded-full">
+			<img class="w-96 lg:rounded-full rounded-3xl hover:rotate-12 hover:scale-110 transition-all duration-500 ease-in-out"
+				src="./icons/avatar.jpg" alt="">
 		</div>
 	</section>
+	<div class="flex py-16"></div>
+	<div class="w-full flex justify-center">
+		<div class="animate-bounce"><box-icon name='chevron-down' type='solid'></box-icon></div>
+	</div>
 	<!-- <section>
 		<h2>Summary</h2>
 		<p class="summary"><img
