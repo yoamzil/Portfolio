@@ -19,7 +19,7 @@ export const BentoGrid = ({
     return (
         <div
             className={cn(
-                "grid md:auto-rows-[15rem] grid-cols-1 md:grid-cols-5 gap-4 max-w-7xl mx-auto ",
+                "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
                 className
             )}
         >
@@ -101,19 +101,19 @@ export const BentoGridItem = ({
                     </div>
                     {/* {id === 2 && </>} */}
                     {id === 3 && (
-                        <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-                            <div className="flex flex-col gap-3 lg:gap-8">
-                                {['React.js', 'Next.js', 'TypeScript'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                        <div className="flex gap-1 lg:gap-3 w-fit absolute top-0 md:top-20 lg:top-0 -right-3">
+                            <div className="flex flex-col gap-3 lg:gap-1">
+                                {['TypeScript', 'C++', 'TailwindCSS'].map((item) => (
+                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-50 rounded-lg text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
                                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
                             </div>
-                            <div className="flex flex-col gap-3 lg:gap-8">
+                            <div className="flex flex-col gap-3 lg:gap-1">
                                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
-                                {['C/C++', 'Docker', 'Javascript'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]">
+                                {['Docker', 'Next.Js', 'C'].map((item) => (
+                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-50 rounded-lg text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
