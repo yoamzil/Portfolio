@@ -72,17 +72,17 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "The Current Portfolio",
-      des: "Simple and stylish portfolio using Next.js, Tailwind CSS, and Framer Motion.",
-      img: "/project.jpeg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      title: "Movie App",
+      des: "Movie Finder application that allows users to search for movies and view trending movies using the TMDB API.",
+      img: "/movieApp.png",
+      iconLists: ["/re.svg", "/vite.svg", "/tail.svg", "/js.svg", "/appWrite.svg"],
       link: "#",
     },
     {
       id: 2,
       title: "Drum Kit",
       des: "A working drum kit uses keyboard and mouse clicks to play sounds made with vanilla JavaScript.",
-      img: "/DrumKit.jpeg",
+      img: "/drumkit2.png",
       iconLists: ["/html.svg", "/css.svg", "/js.svg"],
       link: "https://yoamzil.github.io/DrumKit/",
     },
@@ -96,11 +96,11 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Philosophers",
-      des: "This project is about learning the basics of threading a process, creating threads and mutexes.",
-      img: "/philo_1.jpg",
-      iconLists: ["/c_lang.svg"],
-      link: "https://github.com/yoamzil/42_Philosophers",
+      title: "The Current Portfolio",
+      des: "Simple and stylish portfolio using Next.js, Tailwind CSS, and Framer Motion.",
+      img: "/portfo.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      link: "#",
     },
   ];
   
