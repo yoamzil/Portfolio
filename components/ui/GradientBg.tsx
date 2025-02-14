@@ -34,44 +34,52 @@ export const BackgroundGradientAnimation = ({
   containerClassName?: string;
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
-
   const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+  const [isSafari, setIsSafari] = useState(false);
+
+  // Move all document and navigator access into useEffect
   useEffect(() => {
-    document.body.style.setProperty(
-      "--gradient-background-start",
-      gradientBackgroundStart
-    );
-    document.body.style.setProperty(
-      "--gradient-background-end",
-      gradientBackgroundEnd
-    );
-    document.body.style.setProperty("--first-color", firstColor);
-    document.body.style.setProperty("--second-color", secondColor);
-    document.body.style.setProperty("--third-color", thirdColor);
-    document.body.style.setProperty("--fourth-color", fourthColor);
-    document.body.style.setProperty("--fifth-color", fifthColor);
-    document.body.style.setProperty("--pointer-color", pointerColor);
-    document.body.style.setProperty("--size", size);
-    document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+    // Safari detection
+    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    
+    // Set CSS variables
+    const root = document.body;
+    root.style.setProperty("--gradient-background-start", gradientBackgroundStart);
+    root.style.setProperty("--gradient-background-end", gradientBackgroundEnd);
+    root.style.setProperty("--first-color", firstColor);
+    root.style.setProperty("--second-color", secondColor);
+    root.style.setProperty("--third-color", thirdColor);
+    root.style.setProperty("--fourth-color", fourthColor);
+    root.style.setProperty("--fifth-color", fifthColor);
+    root.style.setProperty("--pointer-color", pointerColor);
+    root.style.setProperty("--size", size);
+    root.style.setProperty("--blending-value", blendingValue);
+  }, []); // Add all dependencies if any of these values can change
 
   useEffect(() => {
+    let animationFrame: number;
+    
     function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
+      if (!interactiveRef.current) return;
+      
       setCurX(curX + (tgX - curX) / 20);
       setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
+      interactiveRef.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+      
+      animationFrame = requestAnimationFrame(move);
     }
 
-    move();
-  }, [tgX, tgY]);
+    animationFrame = requestAnimationFrame(move);
+    
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [curX, curY, tgX, tgY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
@@ -80,11 +88,6 @@ export const BackgroundGradientAnimation = ({
       setTgY(event.clientY - rect.top);
     }
   };
-
-  const [isSafari, setIsSafari] = useState(false);
-  useEffect(() => {
-    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
-  }, []);
 
   return (
     <div

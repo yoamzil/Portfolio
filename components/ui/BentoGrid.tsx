@@ -2,11 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import Lottie from "react-lottie";
+import dynamic from 'next/dynamic';
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+
+const DynamicLottie = dynamic(() => import('react-lottie'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full" /> // Optional loading state
+});
 
 export const BentoGrid = ({
     className,
@@ -49,10 +54,19 @@ export const BentoGridItem = ({
     spareImg?: string;
 }) => {
     const [copied, setCopied] = useState(false);
-    const    handleCopy = () => {
-        navigator.clipboard.writeText("amzilyouness@gmail.com");
-        setCopied(true);
-    }
+
+    const handleCopy = async () => {
+        if (typeof navigator !== 'undefined') {
+            try {
+                await navigator.clipboard.writeText("amzilyouness@gmail.com");
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        }
+    };
+
     return (
         <div
             className={cn(
@@ -64,7 +78,6 @@ export const BentoGridItem = ({
                 backgroundColor: 'linear-gradient(90deg, rgba(4, 7, 29, 1) 0%, rgba(12, 14, 35, 1) 100%)',
             }}
         >
-
             <div className={`${id === 6} && 'flex justify-center'} h-full`}>
                 <div className="w-full h-full absolute">
                     {img && (
@@ -98,7 +111,6 @@ export const BentoGridItem = ({
                     <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
                         {title}
                     </div>
-                    {/* {id === 2 && </>} */}
                     {id === 3 && (
                         <div className="flex gap-1 lg:gap-3 w-fit absolute top-0 md:top-20 lg:top-0 -right-3">
                             <div className="flex flex-col gap-3 lg:gap-1">
@@ -122,21 +134,23 @@ export const BentoGridItem = ({
                     {id === 6 && (
                         <div className="mt-5 relative">
                             <div className="absolute -bottom-5 right-0">
-                                <Lottie options={{
-                                    loop: copied,
-                                    autoplay: copied,
-                                    animationData,
-                                    rendererSettings: {
-                                        preserveAspectRatio: 'xMidYMid slice',
-                                    }
-                                }} />
+                                <DynamicLottie 
+                                    options={{
+                                        loop: copied,
+                                        autoplay: copied,
+                                        animationData,
+                                        rendererSettings: {
+                                            preserveAspectRatio: 'xMidYMid slice',
+                                        }
+                                    }} 
+                                />
                             </div>
                             <MagicButton
-                                title = {copied ? 'Email Copied!' : 'Copy my email'}
-                                icon = {<IoCopyOutline />}
-                                position = "left"
-                                otherClasses = "!bg-[#161a31]"
-                                handleClick = {handleCopy}
+                                title={copied ? 'Email Copied!' : 'Copy my email'}
+                                icon={<IoCopyOutline />}
+                                position="left"
+                                otherClasses="!bg-[#161a31]"
+                                handleClick={handleCopy}
                             />
                         </div>
                     )}
