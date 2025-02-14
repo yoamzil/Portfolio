@@ -76,7 +76,7 @@ export const navItems = [
       des: "Movie Finder application that allows users to search for movies and view trending movies using the TMDB API.",
       img: "/movieApp.png",
       iconLists: ["/re.svg", "/vite.svg", "/tail.svg", "/js.svg", "/appWrite.svg"],
-      link: "#",
+      link: "https://movie-app-sigma-azure.vercel.app/",
     },
     {
       id: 2,
