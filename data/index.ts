@@ -76,7 +76,7 @@ export const navItems = [
       des: "Movie Finder application that allows users to search for movies and view trending movies using the TMDB API.",
       img: "/movieApp.png",
       iconLists: ["/re.svg", "/vite.svg", "/tail.svg", "/js.svg", "/appWrite.svg"],
-      link: "https://movie-app-sigma-azure.vercel.app/",
+      link: "https://yoamzilmovie.vercel.app//",
     },
     {
       id: 2,
@@ -100,7 +100,7 @@ export const navItems = [
       des: "Simple and stylish portfolio using Next.js, Tailwind CSS, and Framer Motion.",
       img: "/portfo.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "#",
+      link: "https://yoamzil.vercel.app/",
     },
   ];
   
