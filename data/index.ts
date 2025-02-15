@@ -8,7 +8,7 @@ export const navItems = [
   export const gridItems = [
     {
       id: 1,
-      title: "A 1337 Coding School Graduate",
+      title: "1337 Coding School Graduate",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
       imgClassName: "h-full w-full p-20",
@@ -100,7 +100,7 @@ export const navItems = [
       des: "Simple and stylish portfolio using Next.js, Tailwind CSS, and Framer Motion.",
       img: "/portfo.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "https://yoamzil.vercel.app/",
+      link: "https://www.amzilyouness.me/",
     },
   ];
   
