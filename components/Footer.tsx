@@ -1,8 +1,11 @@
+"use client";
+
 import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaDownload } from 'react-icons/fa'
 import { socialMedia } from '@/data'
 import Image from 'next/image'
+import FadeUp from './ui/FadeUp'
 
 const Footer = () => {
 	return (
@@ -12,13 +15,15 @@ const Footer = () => {
 					Ready to take <span className='text-purple'>your</span> digital presence to the next level?
 				</h1>
 				<p className='text-white-200 md:mt-10 my-5 text-center'>Reach out to me today and let&apos;s discuss how I can help you achieve your goals.</p>
-				<a href='/AmzilYouness.pdf' download>
-					<MagicButton
-						title="Download My Resume"
-						icon={<FaDownload />}
-						position='right'
-					/>
-				</a>
+				<FadeUp duration={1} delay={0.3}>
+					<a href='/AmzilYouness.pdf' download>
+						<MagicButton
+							title="Download My Resume"
+							icon={<FaDownload />}
+							position='right'
+						/>
+					</a>
+				</FadeUp>
 			</div>
 			<div className='flex mt-16 md:flex-row flex-col-reverse justify-between items-center gap-6'>
 				<p className='md:text-base text-sm md:font-normal font-light'>Copyright © 2025</p>

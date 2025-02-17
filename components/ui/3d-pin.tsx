@@ -22,7 +22,7 @@ export const PinContainer = ({
 	);
 
 	const onMouseEnter = () => {
-		setTransform("translate(-50%,-50%) rotateX(10deg) scale(0.8)");
+		setTransform("translate(-50%,-50%) rotateX(10deg) scale(1)");
 	};
 	const onMouseLeave = () => {
 		setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
@@ -54,7 +54,7 @@ export const PinContainer = ({
 					<div className={cn(" relative z-50 ", className)}>{children}</div>
 				</div>
 			</div>
-			<PinPerspective title={title} href={href} />
+			{/* <PinPerspective title={title} href={href} /> */}
 		</Link>
 	);
 };
