@@ -90,7 +90,7 @@ export const projects = [
 		des: "A working drum kit uses keyboard and mouse clicks to play sounds made with vanilla JavaScript.",
 		img: "/drumkit2.png",
 		iconLists: ["/html.svg", "/css.svg", "/js.svg"],
-		link: "https://yoamzil.github.io/DrumKit/",
+		link: "https://yoamzildrumkit.vercel.app/",
 	},
 	{
 		id: 3,
