@@ -3,14 +3,14 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import dynamic from 'next/dynamic';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 
 const DynamicLottie = dynamic(() => import('react-lottie'), {
 	ssr: false,
-	loading: () => <div className="w-full h-full" /> // Optional loading state
+	loading: () => <div className="w-full h-full" />
 });
 
 export const BentoGrid = ({
@@ -23,7 +23,7 @@ export const BentoGrid = ({
 	return (
 		<div
 			className={cn(
-				"grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+				"grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto px-4 md:px-6 lg:px-8",
 				className
 			)}
 		>
@@ -70,7 +70,7 @@ export const BentoGridItem = ({
 	return (
 		<div
 			className={cn(
-				"row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1]",
+				"row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border border-white/[0.1] hover:border-white/[0.2]",
 				className
 			)}
 			style={{
@@ -134,16 +134,20 @@ export const BentoGridItem = ({
 					{id === 6 && (
 						<div className="mt-5 relative">
 							<div className="absolute -bottom-5 right-0">
-								<DynamicLottie
-									options={{
-										loop: copied,
-										autoplay: copied,
-										animationData,
-										rendererSettings: {
-											preserveAspectRatio: 'xMidYMid slice',
-										}
-									}}
-								/>
+								{copied && (
+									<DynamicLottie
+										options={{
+											loop: true,
+											autoplay: true,
+											animationData,
+											rendererSettings: {
+												preserveAspectRatio: 'xMidYMid slice',
+											}
+										}}
+										height={400}
+										width={400}
+									/>
+								)}
 							</div>
 							<MagicButton
 								title={copied ? 'Email Copied!' : 'Copy my email'}
