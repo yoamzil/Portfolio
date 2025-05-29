@@ -10,7 +10,11 @@ import { IoCopyOutline } from "react-icons/io5";
 
 const DynamicLottie = dynamic(() => import('react-lottie'), {
 	ssr: false,
-	loading: () => <div className="w-full h-full" />
+	loading: () => (
+		<div className="w-full h-full flex items-center justify-center">
+			<div className="animate-pulse w-8 h-8 rounded-full bg-purple/20" />
+		</div>
+	)
 });
 
 export const BentoGrid = ({
@@ -23,7 +27,7 @@ export const BentoGrid = ({
 	return (
 		<div
 			className={cn(
-				"grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto px-4 md:px-6 lg:px-8",
+				"grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto px-4 md:px-6 lg:px-8 py-20",
 				className
 			)}
 		>
@@ -114,7 +118,7 @@ export const BentoGridItem = ({
 					{id === 3 && (
 						<div className="mt-2">
 							<div className="text-[#C1C2D3] text-sm">
-								TypeScript • C++ • TailwindCSS • Docker • Next.Js • C • ReactJS • JavaScript • Framer Motion • SQL
+								ReactJS • Next.js • TypeScript • JavaScript • TailwindCSS • Framer Motion • SQL • Docker • C • C++
 							</div>
 						</div>
 					)}
@@ -142,6 +146,7 @@ export const BentoGridItem = ({
 								position="left"
 								otherClasses="!bg-[#161a31]"
 								handleClick={handleCopy}
+								aria-label={copied ? 'Email address copied to clipboard' : 'Copy email address to clipboard'}
 							/>
 						</div>
 					)}

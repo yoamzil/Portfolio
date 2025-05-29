@@ -29,12 +29,13 @@ const RecentProjects = () => {
 							<PinContainer title={link} href={link}>
 								<div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[27rem] h-[30vh] mb-10'>
 									<div className='relative w-full h-full overflow-hidden rounded-3xl bg-[#13162d]'>
-										<img src="/bg.png" alt="bg-img" />
+										<img src="/bg.png" alt="Background pattern" loading="lazy" />
 									</div>
 									<img
 										src={img}
-										alt={title}
+										alt={`Project screenshot: ${title}`}
 										className="z-10 absolute bottom-0 h-full w-full rounded-3xl"
+										loading="lazy"
 									/>
 								</div>
 								<h1 className='font-bold lg:text-1xl md:text-xl text-base line-clamp-1'>
@@ -49,13 +50,13 @@ const RecentProjects = () => {
 											<div key={icon} className='border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center' style={{
 												transform: `translateX(-${5 * index * 2}px)`
 											}}>
-												<img src={icon} alt={icon} className='p-2' />
+												<img src={icon} alt={`Technology icon ${index + 1}`} className='p-2' loading="lazy" />
 											</div>
 										))}
 									</div>
 									<div className='flex justify-center items-center'>
 										<p className='flex lg:text-xl md:text-xs text-sm text-purple'>Open</p>
-										<FaLocationArrow className='ms-3' color="#CBACF9" />
+										<FaLocationArrow className='ms-3' color="#CBACF9" aria-hidden="true" />
 									</div>
 								</div>
 							</PinContainer>
