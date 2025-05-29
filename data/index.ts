@@ -1,6 +1,7 @@
 export const navItems = [
 	{ name: "Home", link: "#" },
 	{ name: "About", link: "#about" },
+	{ name: "Experience", link: "#experience" },
 	{ name: "Projects", link: "#projects" },
 	{ name: "Contact", link: "#contact" },
 ];
@@ -66,6 +67,37 @@ export const gridItems = [
 		titleClassName: "justify-center md:max-w-full max-w-60 text-center",
 		img: "",
 		spareImg: "",
+	},
+];
+
+export const workExperience = [
+	{
+		id: 1,
+		title: "1337 Coding School",
+		desc: "Started my coding journey at 1337 Coding School in October 2022, focusing on C, C++, and web development.",
+		className: "md:col-span-2",
+		thumbnail: "/exp1.svg",
+	},
+	{
+		id: 2,
+		title: "ALX Software Engineering Program",
+		desc: "Started my software engineering journey at ALX in February 2023, and dived deep down into full stack development.",
+		className: "md:col-span-2",
+		thumbnail: "/exp2.svg",
+	},
+	{
+		id: 3,
+		title: "Freelance App Dev Project",
+		desc: "Developed a web app for a client, from initial concept to deployment.",
+		className: "md:col-span-2",
+		thumbnail: "/exp3.svg",
+	},
+	{
+		id: 4,
+		title: "Junior Full Stack Developer",
+		desc: "Developing and maintaining user-facing features using modern technologies for Chaabi Cash agency.",
+		className: "md:col-span-2",
+		thumbnail: "/exp4.svg",
 	},
 ];
 
