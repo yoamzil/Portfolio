@@ -1,46 +1,65 @@
-import React from 'react'
-import { Spotlight } from './ui/Spotlight'
-import { TextGenerateEffect } from './ui/TextGenerateEffect'
-import MagicButton from './ui/MagicButton'
-import { FaLocationArrow } from 'react-icons/fa'
+"use client";
+
+import { useEffect, useState } from "react";
+import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 
 const Hero = () => {
-	return (
-		<div className='pb-20 pt-36'>
-			<div>
-				<Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen' fill='white' />
-				<Spotlight className='top-10 left-full h-[80vh] w-[50vw]' fill='purple' />
-				<Spotlight className='top-28 left-80 h-[80vh] w-[50vw]' fill='blue' />
-			</div>
+  const [isVisible, setIsVisible] = useState(false);
 
-			<div className="h-screen w-full dark:bg-black-100 bg-white  dark:bg-grid-white/[0.03] bg-grid-black/[0.2] flex items-center justify-center absolute top-0 left-0">
-				{/* Radial gradient for the container to give a faded look */}
-				<div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-			</div>
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-			<div className='flex justify-center relative my-40 z-10'>
-				<div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-					<h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
-						Howdy!
-					</h2>
-					<TextGenerateEffect
-						className='text-center text-[40px] md:text-5xl lg:text-6xl'
-						words='I Build Things For The Web'
-					/>
-					<p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-						I&apos;m Youness, a Junior Full Stack Developer based in Morocco.
-					</p>
-					<a href="#about">
-						<MagicButton
-							title="Explore More"
-							icon={<FaLocationArrow />}
-							position='right'
-						/>
-					</a>
-				</div>
-			</div>
-		</div>
-	)
-}
+  const socialLinks = [
+    { icon: Github, href: "https://github.com/yoamzil", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/yoamzil/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/youness__amzil", label: "Twitter" },
+  ];
 
-export default Hero
+  return (
+    <section className="min-h-screen flex items-center justify-center relative">
+      <div className="container-width text-center">
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Youness
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Full Stack Developer crafting digital experiences with clean code and modern technologies
+          </p>
+          
+          <div className="flex items-center justify-center space-x-6 mb-12">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full glass-effect hover:scale-110 transition-all duration-300"
+                aria-label={social.label}
+              >
+                <social.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="#about"
+            className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+          >
+            <span>Learn More</span>
+            <ArrowDown className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

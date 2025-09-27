@@ -1,22 +1,19 @@
-import Grid from "@/components/Grid";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { FloatingNav } from "@/components/ui/FloatingNav";
-import RacentProjects from "@/components/RecentProjects";
-import { navItems } from "@/data";
-import Footer from "@/components/Footer";
+import About from "@/components/About";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
-	return (
-		<main className="relative bg-black-100 flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
-			<div className="max-w-7xl w-full">
-				<FloatingNav navItems={navItems} />
-				<Hero />
-				<Grid />
-				<Experience />
-				<RacentProjects />
-				<Footer />
-			</div>
-		</main>
-	);
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+    </main>
+  );
 }
