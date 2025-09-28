@@ -6,101 +6,6 @@ export const navItems = [
 	{ name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
-	{
-		id: 1,
-		title: "1337 Coding School Graduate",
-		description: "",
-		className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
-		imgClassName: "h-full w-full p-20",
-		titleClassName: "justify-end",
-		img: "/1337.svg",
-		spareImg: "/b4.svg",
-	},
-	{
-		id: 2,
-		title: "I'm very flexible with time zone communications",
-		description: "",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-		imgClassName: "",
-		titleClassName: "justify-start",
-		img: "/grid.svg",
-		spareImg: "/grid.svg",
-	},
-	{
-		id: 3,
-		title: "My tech stack",
-		description: "I constantly try to improve",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-		imgClassName: "",
-		titleClassName: "justify-center",
-		img: "",
-		spareImg: "",
-	},
-	{
-		id: 4,
-		title: "Tech enthusiast with a passion for development.",
-		description: "",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-		imgClassName: "",
-		titleClassName: "justify-start",
-		img: "/grid.svg",
-		spareImg: "/b4.svg",
-	},
-
-	{
-		id: 5,
-		title: "Currently looking for a new opportunity",
-		description: "The Inside Scoop",
-		className: "md:col-span-3 md:row-span-2",
-		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-		titleClassName: "justify-center md:justify-start lg:justify-center",
-		img: "/b5.svg",
-		spareImg: "/grid.svg",
-	},
-	{
-		id: 6,
-		title: "Do you want to start a project together?",
-		description: "",
-		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-		imgClassName: "",
-		titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-		img: "",
-		spareImg: "",
-	},
-];
-
-export const workExperience = [
-	{
-		id: 1,
-		title: "1337 Coding School",
-		desc: "Started my coding journey at 1337 Coding School in October 2022, focusing on C, C++, and web development.",
-		className: "md:col-span-2",
-		thumbnail: "/exp1.svg",
-	},
-	{
-		id: 2,
-		title: "ALX Software Engineering Program",
-		desc: "Started my software engineering journey at ALX in February 2023, and dived deep down into full stack development.",
-		className: "md:col-span-2",
-		thumbnail: "/exp2.svg",
-	},
-	{
-		id: 3,
-		title: "Freelance App Dev Project",
-		desc: "Developed a web app for a client, from initial concept to deployment.",
-		className: "md:col-span-2",
-		thumbnail: "/exp3.svg",
-	},
-	{
-		id: 4,
-		title: "Junior Full Stack Developer",
-		desc: "Developing and maintaining user-facing features using modern technologies for Chaabi Cash agency.",
-		className: "md:col-span-2",
-		thumbnail: "/exp4.svg",
-	},
-];
-
 export const projects = [
 	{
 		id: 1,
@@ -148,20 +53,36 @@ export const projects = [
 	},
 ];
 
-export const socialMedia = [
+// Social media links for components (with icon names for dynamic rendering)
+export const socialLinks = [
 	{
-		id: 1,
-		img: "/git.svg",
-		link: "https://github.com/yoamzil",
+		icon: "Github",
+		label: "GitHub",
+		href: "https://github.com/yoamzil",
 	},
 	{
-		id: 2,
-		img: "/twit.svg",
-		link: "https://x.com/youness__amzil",
+		icon: "Linkedin",
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/in/yoamzil/",
 	},
 	{
-		id: 3,
-		img: "/link.svg",
-		link: "https://www.linkedin.com/in/yoamzil/",
+		icon: "Twitter",
+		label: "Twitter",
+		href: "https://x.com/youness__amzil",
 	},
 ];
+
+// Hero section content
+export const heroContent = {
+	greeting: "Hi, I'm",
+	name: "Youness",
+	title: "Full Stack Developer crafting digital experiences with clean code and modern technologies",
+	ctaText: "Learn More",
+};
+
+// Contact information
+export const contactInfo = {
+	email: "amzilyouness@gmail.com",
+	location: "Morocco",
+	availability: "Remote Work",
+};
