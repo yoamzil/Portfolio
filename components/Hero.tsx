@@ -31,8 +31,11 @@ const Hero = () => {
 							{heroContent.name}
 						</span>
 					</h1>
-					<p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+					<h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
 						{heroContent.title}
+					</h2>
+					<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+						{heroContent.subtitle}
 					</p>
 
 					<div className="flex items-center justify-center space-x-6 mb-12">

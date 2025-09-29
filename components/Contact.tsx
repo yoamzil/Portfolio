@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Mail, Copy, Check, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Copy, Check, Github, Linkedin, Twitter, Dot } from "lucide-react";
 import { socialLinks, contactInfo } from '@/data';
 
 const Contact = () => {
@@ -61,17 +61,20 @@ const Contact = () => {
 					className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
 						}`}
 				>
-					<h2 className="heading text-center mb-16">Get In Touch</h2>
+					<h2 className="heading text-center mb-6">Let's Connect</h2>
+					<p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+						Have a project in mind or want to discuss opportunities? I'm just a message away
+					</p>
 
 					<div className="max-w-4xl mx-auto">
 						{/* Contact Info */}
 						<div className="text-center mb-12">
-							<h3 className="text-2xl font-semibold mb-6">Let&apos;s work together</h3>
-							<p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-								I&apos;m always interested in new opportunities and exciting projects.
-								Whether you have a question or just want to say hi, I&apos;ll try my best
-								to get back to you!
-							</p>
+							<div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+								<div className="flex items-center">
+									<div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+									Available for Projects
+								</div>
+							</div>
 						</div>
 
 						{/* Contact Actions */}

@@ -27,29 +27,12 @@ const Projects = () => {
 		return () => observer.disconnect();
 	}, []);
 
-	// Transform the centralized projects data to match the component's expected format
+	// Use the projects data directly with simplified technologies array
 	const transformedProjects = projects.map(project => ({
 		title: project.title,
 		description: project.des,
 		image: project.img,
-		technologies: project.iconLists.map(icon => {
-			// Map icon paths to technology names
-			const techMap: { [key: string]: string } = {
-				"/re.svg": "React",
-				"/vite.svg": "Vite",
-				"/tail.svg": "TailwindCSS",
-				"/js.svg": "JavaScript",
-				"/appWrite.svg": "AppWrite",
-				"/html.svg": "HTML",
-				"/css.svg": "CSS",
-				"/c_lang.svg": "C",
-				"/next.svg": "Next.js",
-				"/ts.svg": "TypeScript",
-				"/three.svg": "Three.js",
-				"/fm.svg": "Framer Motion"
-			};
-			return techMap[icon] || icon.replace(/^\/|\.svg$/g, '');
-		}),
+		technologies: project.technologies,
 		liveUrl: project.link,
 		githubUrl: project.link.includes('github.com') ? project.link : "https://github.com/yoamzil"
 	}));
@@ -65,7 +48,10 @@ const Projects = () => {
 					className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
 						}`}
 				>
-					<h2 className="heading text-center mb-16">Featured Projects</h2>
+					<h2 className="heading text-center mb-6">Featured Projects</h2>
+					<p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+						A curated collection of my most impactful and innovative work
+					</p>
 
 					<div className="grid md:grid-cols-2 gap-8">
 						{transformedProjects.map((project, index) => (
@@ -75,7 +61,7 @@ const Projects = () => {
 									}`}
 								style={{ transitionDelay: `${index * 200}ms` }}
 							>
-								<div className="relative h-48 overflow-hidden">
+								<div className="relative h-64 overflow-hidden">
 									{!imagesLoaded[project.title] && (
 										<div className="absolute inset-0 bg-muted animate-pulse rounded-lg" />
 									)}
@@ -87,7 +73,7 @@ const Projects = () => {
 										placeholder="blur"
 										blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
 										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-										className={`object-cover group-hover:scale-105 transition-transform duration-300 ${imagesLoaded[project.title] ? 'opacity-100' : 'opacity-0'
+										className={`object-cover object-top group-hover:scale-105 transition-transform duration-300 ${imagesLoaded[project.title] ? 'opacity-100' : 'opacity-0'
 											}`}
 										onLoad={() => handleImageLoad(project.title)}
 									/>

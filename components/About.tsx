@@ -24,9 +24,27 @@ const About = () => {
 		return () => observer.disconnect();
 	}, []);
 
-	const skills = [
-		"React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Python",
-		"TailwindCSS", "PostgreSQL", "MongoDB", "Docker", "Git", "AWS"
+	const skillCategories = [
+		{
+			title: "Frontend",
+			description: "Building responsive interfaces",
+			skills: ["React", "Next.js", "TypeScript", "JavaScript", "TailwindCSS"]
+		},
+		{
+			title: "Backend",
+			description: "Server-side development",
+			skills: ["Node.js", "Python", "REST APIs"]
+		},
+		{
+			title: "Database",
+			description: "Data management",
+			skills: ["PostgreSQL", "SQL", "Prisma"]
+		},
+		{
+			title: "DevOps",
+			description: "Development operations",
+			skills: ["Docker", "Git"]
+		}
 	];
 
 	const features = [
@@ -77,17 +95,25 @@ const About = () => {
 						</div>
 
 						<div className="space-y-6">
-							<h3 className="text-xl font-semibold mb-4">Technologies I work with</h3>
-							<div className="flex flex-wrap gap-3">
-								{skills.map((skill) => (
-									<span
-										key={skill}
-										className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm font-medium"
-									>
-										{skill}
-									</span>
-								))}
-							</div>
+							<h3 className="text-xl font-semibold mb-6">Technical Arsenal</h3>
+							{skillCategories.map((category) => (
+								<div key={category.title} className="space-y-3">
+									<div>
+										<h4 className="text-lg font-medium text-foreground">{category.title}</h4>
+										<p className="text-sm text-muted-foreground">{category.description}</p>
+									</div>
+									<div className="flex flex-wrap gap-2">
+										{category.skills.map((skill) => (
+											<span
+												key={skill}
+												className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm font-medium"
+											>
+												{skill}
+											</span>
+										))}
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 

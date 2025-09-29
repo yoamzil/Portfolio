@@ -49,7 +49,7 @@ export default function RootLayout({
 				<link rel="preload" href="/movieApp.png" as="image" type="image/png" />
 				<link rel="preload" href="/drumkit2.png" as="image" type="image/png" />
 				<link rel="preload" href="/so_long.png" as="image" type="image/png" />
-				<link rel="preload" href="/portfo.png" as="image" type="image/png" />
+				<link rel="preload" href="/dataflow.png" as="image" type="image/png" />
 				{/* DNS prefetch for external domains */}
 				<link rel="dns-prefetch" href="//github.com" />
 				<link rel="dns-prefetch" href="//linkedin.com" />
