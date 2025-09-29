@@ -106,7 +106,7 @@ const About = () => {
 										{category.skills.map((skill) => (
 											<span
 												key={skill}
-												className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm font-medium"
+												className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105"
 											>
 												{skill}
 											</span>

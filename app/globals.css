@@ -3,74 +3,93 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --border: 240 5.9% 90%;
-    --radius: 0.5rem;
-  }
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+		--border: 240 5.9% 90%;
+		--radius: 0.5rem;
+	}
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-  }
+	.dark {
+		--background: 240 10% 3.9%;
+		--foreground: 0 0% 98%;
+		--card: 240 10% 3.9%;
+		--card-foreground: 0 0% 98%;
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 0 0% 98%;
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+		--accent: 240 3.7% 15.9%;
+		--accent-foreground: 0 0% 98%;
+		--border: 240 3.7% 15.9%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border scroll-smooth;
-  }
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
-  button {
-    @apply active:outline-none;
-  }
+	* {
+		@apply border-border scroll-smooth;
+	}
+	body {
+		@apply bg-background text-foreground font-sans;
+	}
+	button {
+		@apply active:outline-none;
+	}
+
+	/* Improve mobile touch interactions */
+	@media (hover: none) and (pointer: coarse) {
+		button,
+		a {
+			@apply active:scale-95 transition-transform duration-150;
+		}
+	}
 }
 
 @layer utilities {
-  .heading {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl;
-  }
-  
-  .section-padding {
-    @apply py-16 md:py-24;
-  }
-  
-  .container-width {
-    @apply max-w-6xl mx-auto px-4 md:px-6;
-  }
-  
-  .fade-in {
-    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
-  }
-  
-  .fade-in.visible {
-    @apply opacity-100 translate-y-0;
-  }
-  
-  .glass-effect {
-    @apply backdrop-blur-sm bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
-  }
+	.heading {
+		@apply font-bold text-3xl md:text-4xl lg:text-5xl;
+	}
+
+	.section-padding {
+		@apply py-16 md:py-24;
+	}
+
+	.container-width {
+		@apply max-w-6xl mx-auto px-4 md:px-6;
+	}
+
+	.fade-in {
+		@apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+	}
+
+	.fade-in.visible {
+		@apply opacity-100 translate-y-0;
+	}
+
+	.glass-effect {
+		@apply backdrop-blur-sm bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

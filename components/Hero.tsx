@@ -11,6 +11,20 @@ const Hero = () => {
 		setIsVisible(true);
 	}, []);
 
+	// Smooth scroll function
+	const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		e.preventDefault();
+		const targetElement = document.getElementById('about');
+
+		if (targetElement) {
+			const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
+			window.scrollTo({
+				top: offsetTop,
+				behavior: 'smooth'
+			});
+		}
+	};
+
 	// Icon mapping for dynamic icon rendering
 	const iconMap = {
 		Github,
@@ -58,6 +72,7 @@ const Hero = () => {
 
 					<a
 						href="#about"
+						onClick={handleSmoothScroll}
 						className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105"
 					>
 						<span>{heroContent.ctaText}</span>

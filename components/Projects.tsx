@@ -116,10 +116,14 @@ const Projects = () => {
 										</p>
 
 										<div className="flex flex-wrap gap-2">
-											{project.technologies.map((tech) => (
+											{project.technologies.map((tech, techIndex) => (
 												<span
 													key={tech}
-													className="px-2 py-1 bg-accent text-accent-foreground rounded text-xs font-medium"
+													className="px-2 py-1 bg-accent text-accent-foreground rounded text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105"
+													style={{
+														animationDelay: `${techIndex * 100}ms`,
+														animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none'
+													}}
 												>
 													{tech}
 												</span>
