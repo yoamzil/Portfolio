@@ -33,7 +33,7 @@ const About = () => {
 		{
 			title: "Backend",
 			description: "Server-side development",
-			skills: ["Node.js", "Python", "REST APIs"]
+			skills: ["Node.js", "REST APIs"]
 		},
 		{
 			title: "Database",

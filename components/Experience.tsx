@@ -29,7 +29,7 @@ const Experience = () => {
 			title: "Junior Full Stack Developer",
 			company: "Chaabi Cash",
 			location: "Morocco",
-			period: "2025 - Present",
+			period: "Jun 2025 - Nov 2025",
 			description: "Developed a platform using Next.js, TypeScript, and Tailwind CSS with multi-language support.",
 			achievements: [
 				"Built DataFlow, a full stack client management app to digitize daily operations",
@@ -55,7 +55,7 @@ const Experience = () => {
 			title: "Software Engineering Student",
 			company: "1337 Coding School",
 			location: "Morocco",
-			period: "2022 - 2024",
+			period: "2022 - Present",
 			description: "Completed the core curriculum in software engineering and systems programming",
 			achievements: [
 				"Mastered low-level programming with C/C++ and Unix systems",
