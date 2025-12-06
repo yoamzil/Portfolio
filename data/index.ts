@@ -33,7 +33,7 @@ export const projects = [
 			"Prisma",
 			"SQLite",
 		],
-		link: "https://www.amzilyouness.me/",
+		link: "https://www.linkedin.com/posts/yoamzil_super-excited-to-share-my-internship-project-activity-7398684833155289088-mqk8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEF535cBFR2d_roxhWxC4FbsBfmcqu9KOuQ",
 	},
 	{
 		id: 4,
