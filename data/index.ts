@@ -9,6 +9,20 @@ export const navItems = [
 export const projects = [
 	{
 		id: 1,
+		title: "DataFlow App",
+		des: "Full-stack platform with a user-friendly interface for managing client data and transactions. Built with Next.js, TypeScript, and Tailwind CSS, featuring multi-language support and offline capabilities.",
+		img: "/dataflow.png",
+		technologies: [
+			"Next.js",
+			"TailwindCSS",
+			"TypeScript",
+			"Prisma",
+			"SQLite",
+		],
+		link: "https://github.com/yoamzil/DataFlow",
+  },
+  {
+		id: 2,
 		title: "Movie Discovery Platform",
 		des: "Full-stack movie discovery application with real-time search functionality and trending content. Integrated TMDB API for comprehensive movie data, implemented responsive design with optimized image loading and caching strategies.",
 		img: "/movieApp.png",
@@ -22,21 +36,7 @@ export const projects = [
 		link: "https://yoamzilmovie.vercel.app//",
 	},
 	{
-		id: 2,
-		title: "DataFlow App",
-		des: "Full-stack platform with a user-friendly interface for managing client data and transactions. Built with Next.js, TypeScript, and Tailwind CSS, featuring multi-language support and offline capabilities.",
-		img: "/dataflow.png",
-		technologies: [
-			"Next.js",
-			"TailwindCSS",
-			"TypeScript",
-			"Prisma",
-			"SQLite",
-		],
-		link: "https://www.linkedin.com/posts/yoamzil_super-excited-to-share-my-internship-project-activity-7398684833155289088-mqk8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEF535cBFR2d_roxhWxC4FbsBfmcqu9KOuQ",
-	},
-	{
-		id: 4,
+		id: 3,
 		title: "Inception",
 		des: "Multi-container web infrastructure built from scratch using Docker orchestration. Architected secure, scalable deployment with custom Dockerfiles for each service, SSL/TLS encryption, and automated service discovery.",
 		img: "/container.png",
@@ -50,12 +50,12 @@ export const projects = [
 		link: "https://github.com/yoamzil/42_Inception",
 	},
 	{
-		id: 3,
-		title: "So_Long Game",
-		des: "2D game built from scratch using MiniLibX graphics library. Implemented sprite rendering, collision detection, texture mapping, and game state management with optimized memory allocation.",
-		img: "/so_long.png",
-		technologies: ["C", "MiniLibX", "Graphics Programming"],
-		link: "https://github.com/yoamzil/42_So_long",
+		id: 4,
+		title: "Home Server Infrastructure",
+		des: "Self-hosted home server stack running on Docker Compose. Currently serving Jellyfin, qBittorrent, and a Glance dashboard with live monitoring. Actively expanding with Nginx Proxy Manager, Immich, and more.",
+		img: "/glance.png",
+		technologies: ["Docker", "Docker Compose", "Self-hosted", "DevOps"],
+		link: "https://github.com/yoamzil/home-server-infra",
 	},
 ];
 

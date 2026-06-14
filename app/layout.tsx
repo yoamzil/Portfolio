@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://amzilyouness.me'),
+	metadataBase: new URL('https://amzil.dev'),
 	title: "Youness Amzil | Full Stack Developer",
 	description: "Clean, fast portfolio of Youness Amzil - Full Stack Developer specializing in React, Next.js, and modern web technologies.",
 	keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Web Development", "Morocco"],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Youness Amzil | Full Stack Developer",
 		description: "Clean, fast portfolio of Youness Amzil - Full Stack Developer specializing in React, Next.js, and modern web technologies.",
-		url: "https://amzilyouness.me",
+		url: "https://amzil.dev",
 		siteName: "Youness Amzil Portfolio",
 		images: [
 			{
@@ -48,8 +48,9 @@ export default function RootLayout({
 				{/* Preload critical resources */}
 				<link rel="preload" href="/movieApp.png" as="image" type="image/png" />
 				<link rel="preload" href="/drumkit2.png" as="image" type="image/png" />
-				<link rel="preload" href="/so_long.png" as="image" type="image/png" />
+				<link rel="preload" href="/container.png" as="image" type="image/png" />
 				<link rel="preload" href="/dataflow.png" as="image" type="image/png" />
+				<link rel="preload" href="/glance.png" as="image" type="image/png" />
 				{/* DNS prefetch for external domains */}
 				<link rel="dns-prefetch" href="//github.com" />
 				<link rel="dns-prefetch" href="//linkedin.com" />
