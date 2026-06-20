@@ -33,7 +33,7 @@ export const projects = [
 			"JavaScript",
 			"AppWrite",
 		],
-		link: "https://yoamzilmovie.vercel.app//",
+		link: "https://yoamzilmovie.vercel.app",
 	},
 	{
 		id: 3,
@@ -52,9 +52,9 @@ export const projects = [
 	{
 		id: 4,
 		title: "Home Server Infrastructure",
-		des: "Self-hosted home server stack running on Docker Compose. Currently serving Jellyfin, qBittorrent, and a Glance dashboard with live monitoring. Actively expanding with Nginx Proxy Manager, Immich, and more.",
+		des: "Designed and deployed a self-hosted home media server. Built with Docker Compose, featuring Jellyfin, qBittorrent, and a Glance dashboard with live service monitoring and real-time torrent stats via qBittorrent's API.",
 		img: "/glance.png",
-		technologies: ["Docker", "Docker Compose", "Self-hosted", "DevOps"],
+		technologies: ["Linux", "Docker", "Docker Compose", "Self-hosted", "DevOps"],
 		link: "https://github.com/yoamzil/home-server-infra",
 	},
 ];
@@ -82,7 +82,7 @@ export const socialLinks = [
 export const heroContent = {
 	greeting: "Hi, I'm",
 	name: "Youness",
-	title: "Crafting robust solutions through clean code",
+	title: "Building things that actually work",
 	subtitle: "Full Stack Developer specializing in modern web technologies",
 	ctaText: "Learn More",
 };

@@ -18,7 +18,7 @@ const Projects = () => {
 				if (entry.isIntersecting) {
 					setIsVisible(true);
 					// Simulate loading time for demonstration
-					setTimeout(() => setIsLoading(false), 800);
+					setTimeout(() => setIsLoading(false));
 				}
 			},
 			{ threshold: 0.1 }

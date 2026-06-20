@@ -43,7 +43,7 @@ const About = () => {
 		{
 			title: "DevOps",
 			description: "Development operations",
-			skills: ["Docker", "Git"]
+			skills: ["Docker", "Git", "Linux", "Nginx"]
 		}
 	];
 
@@ -76,14 +76,8 @@ const About = () => {
 
 					<div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
 						<div>
-							<p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-								I&apos;m a passionate Full Stack Developer based in Morocco, with a strong foundation
-								from 1337 Coding School and ALX Software Engineering Program. I specialize in
-								building modern web applications that are fast, accessible, and user-friendly.
-							</p>
-							<p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-								My journey in tech started in 2022, and since then I&apos;ve been dedicated to
-								continuous learning and creating solutions that make a difference.
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Full Stack Developer from Morocco, trained at 1337 Coding School and ALX. I build production tools, from client management platforms at Chaabi Cash to self-hosted infrastructure running on Docker. I care about things that actually work.
 							</p>
 							<a
 								href="/Amzil-Youness-Resume.pdf"
